@@ -347,7 +347,7 @@ app.get('/', (req, res) => {
     res.redirect('/login.html');
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 app.listen(3000, () => {
     console.log("Server listening on port 3000");
 });
