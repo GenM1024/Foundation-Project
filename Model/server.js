@@ -343,6 +343,10 @@ app.get('/api/movement-logs/item/:id', (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.redirect('/login.html');
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(3000, () => {
     console.log("Server listening on port 3000");
