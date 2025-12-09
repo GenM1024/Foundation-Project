@@ -1,4 +1,4 @@
-const Database = require("better-sqlite3");
+const Database = require("better-sqlite3-multiple-ciphers");
 const Express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -347,7 +347,7 @@ app.get('/', (req, res) => {
     res.redirect('/login.html');
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT ;
 app.listen(3000, () => {
     console.log("Server listening on port 3000");
 });
