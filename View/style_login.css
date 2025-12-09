@@ -1,0 +1,93 @@
+/* Background  */
+/*NOTE : Comment use the back-slash and asterisk*/
+#my_background {
+    background-image: url(background_image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Center the login box */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* The card with the form */
+.login-box {
+    background-color: rgba(0, 0, 0, 0.6); /* transparent dark box */
+    padding: 25px 30px;
+    border-radius: 10px;
+    color: aliceblue;
+    width: 300px;
+}
+
+/* Heading */
+.login-box h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form layout */
+.login-form .form-group {
+    margin-bottom: 15px;
+}
+
+/* Labels */
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Inputs */
+.login-form input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/* Button */
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4a90e2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    opacity: 0.9;
+}
+
+select{
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+select:hover {
+    opacity: 0.9;
+}
+
+.spinner {
+    border: 4px solid rgba(255,255,255,0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}

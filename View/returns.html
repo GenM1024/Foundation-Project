@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returns - Inventory System</title>
+    <link rel="stylesheet" href="style_dashboard.css">
+    <link rel="stylesheet" href="navigation.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h2>Inventory Management System</h2>
+                <p id="welcome-text" class="welcome-text">Loading...</p>
+            </div>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="front_display.html">Front Display</a>
+            <a href="storage.html">Storage</a>
+            <a href="returns.html" id="returns-link" class="active">Returns</a>
+            <a href="manage_employees.html" id="employees-link">Manage Employees</a>
+            <a href="add_item.html" id="add-item-link">Add Item</a>
+            <a href="movement_history.html" >Movement History</a>
+        </nav>
+        <div id="error-container"></div>
+        <div class="page-content section-full">
+            <h3>
+                Returns
+                <span class="quantity-badge" id="returns-count">0</span>
+            </h3>
+            <div id="returns-items" class="loading">Loading...</div>
+        </div>
+    </div>
+    <div id="moveModal" class="modal">
+        <div class="modal-content">
+            <h3>Move Item</h3>
+            <div class="form-group">
+                <label>Item:</label>
+                <input type="text" id="modal-item-name" readonly>
+            </div>
+            <div class="form-group">
+                <label>Quantity to Move:</label>
+                <input type="number" id="modal-quantity" min="1" value="1">
+            </div>
+            <div class="form-group">
+                <label>From:</label>
+                <input type="text" id="modal-from" readonly>
+            </div>
+            <div class="form-group">
+                <label>To:</label>
+                <input type="text" id="modal-to" readonly>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-danger" onclick="closeModal()">Cancel</button>
+                <button class="btn btn-success" onclick="confirmMove()">Move</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../Controller/returns_controller.js"></script>
+</body>
+</html>

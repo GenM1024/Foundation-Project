@@ -1,0 +1,32 @@
+.nav-menu {
+    background-color: #333;
+    padding: 0;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.nav-menu a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+    border-right: 1px solid #555;
+}
+
+.nav-menu a:hover {
+    background-color: #555;
+}
+
+.nav-menu a.active {
+    background-color: #007bff;
+}
+
+.nav-menu a.disabled {
+    color: #999;
+    cursor: not-allowed;
+    background-color: #222;
+}
+
+.nav-menu a.disabled:hover {
+    background-color: #222;
+}

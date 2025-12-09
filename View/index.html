@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page : INVENTORY SYSTEM</title>
+    <link rel="stylesheet" href="style_login.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</head>
+<body id="my_background">
+    <div class="login-container">
+        <div class="login-box">
+            <h1> LOGIN </h1>
+            <form class="login-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="username">Enter username</label>
+                    <select id="username" onchange="getEmployeeDetails()" required>
+                        <option value="">--Select user name--</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="role">Employee Role</label>
+                    <input type="text" id="role" name="role" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="password">Enter password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button class="form" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/Controller/login_controller.js"></script>
+</body>
+</html>
