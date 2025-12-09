@@ -1,4 +1,4 @@
-const Database = require("better-sqlite3-multiple-ciphers");
+const Database = require("better-sqlite3");
 const Express = require("express");
 const cors = require("cors");
 const path = require("path");
