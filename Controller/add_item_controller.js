@@ -72,7 +72,7 @@ async function addItem(event) {
     const location = document.getElementById('item-location').value;
     
     try {
-        const response = await fetch('http://localhost:3000/api/inventory/add', {
+        const response = await fetch('/api/inventory/add', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

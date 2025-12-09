@@ -7,7 +7,7 @@ const app = Express();
 const employeeDatabase = new Database("employees.db");
 app.use(cors());
 app.use(Express.json());
-app.use(Express.static(path.join(__dirname, '../')));
+app.use(Express.static(path.join(__dirname, '../View')));
 
 //CREATE employees TABLE
 employeeDatabase.exec(
@@ -343,6 +343,7 @@ app.get('/api/movement-logs/item/:id', (req, res) => {
     }
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(3000, () => {
-    console.log("Server listening on http://localhost:3000");
+    console.log("Server listening on port ${PORT}");
 });

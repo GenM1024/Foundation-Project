@@ -77,7 +77,7 @@ function showError(message) {
 
 async function loadInventory() {
     try {
-        const response = await fetch('http://localhost:3000/api/inventory/Storage');
+        const response = await fetch('/api/inventory/Storage');
         if (!response.ok) throw new Error('Failed to fetch Storage items');
         
         const items = await response.json();
@@ -174,7 +174,7 @@ async function confirmMove() {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/inventory/move', {
+        const response = await fetch('/api/inventory/move', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
