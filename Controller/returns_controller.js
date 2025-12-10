@@ -215,7 +215,7 @@ if (checkAuth()) {
     refreshInterval = setInterval(() => {
         console.log('Auto-refreshing Returns inventory...');
         loadInventory();
-    }, 60000); // 60000 ms = 1 minute
+    }, 3000); // 60000 ms = 1 minute
 }
 
 // Clean up interval when page is closed/unloaded
