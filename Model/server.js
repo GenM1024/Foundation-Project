@@ -344,7 +344,7 @@ app.get('/api/movement-logs/item/:id', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.redirect('/View/login.html');
+    res.redirect('/View/index.html');
 });
 
 const PORT = process.env.PORT||3000;

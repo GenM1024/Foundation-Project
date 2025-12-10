@@ -70,14 +70,14 @@ function showError(message) {
     errorContainer.innerHTML = `
         <div class="error-message">
             <strong>Error:</strong> ${message}<br>
-            <small>Make sure the server is running on http://localhost:3000</small>
+            <small>Make sure the server is running </small>
         </div>
     `;
 }
 
 async function loadInventory() {
     try {
-        const response = await fetch('http://localhost:3000/api/inventory/Storage');
+        const response = await fetch('/api/inventory/Storage');
         if (!response.ok) throw new Error('Failed to fetch Storage items');
         
         const items = await response.json();
@@ -145,7 +145,6 @@ function editItem(itemId, itemName, itemCategory, quantity, location, from) {
     const url = `edit_item.html?id=${itemId}&name=${encodeURIComponent(itemName)}&category=${encodeURIComponent(itemCategory)}&quantity=${quantity}&location=${location}&from=${from}`;
     window.location.href = url;
 }
-
 function moveItem(itemId, fromLocation, toLocation, maxQty, itemName) {
     currentMoveData = { itemId, fromLocation, toLocation, maxQty, itemName };
     
@@ -174,7 +173,7 @@ async function confirmMove() {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/inventory/move', {
+        const response = await fetch('/api/inventory/move', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

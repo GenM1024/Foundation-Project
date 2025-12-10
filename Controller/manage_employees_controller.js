@@ -55,7 +55,7 @@ function showSuccess(message) {
 
 async function loadEmployees() {
     try {
-        const response = await fetch('http://localhost:3000/api/employees/all');
+        const response = await fetch('/api/employees/all');
         if (!response.ok) throw new Error('Failed to fetch employees');
         
         const text = await response.text();
@@ -104,7 +104,7 @@ async function addEmployee(event) {
     const password = document.getElementById('emp-password').value;
     
     try {
-        const response = await fetch('http://localhost:3000/api/employees/add', {
+        const response = await fetch('/api/employees/add', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -147,8 +147,6 @@ if (checkAuth()) {
     loadEmployees(); // Load immediately
     // Set up auto-refresh every 1 minute (60000 milliseconds)
     refreshInterval = setInterval(() => {
-        console.log('Auto-refreshing employee list...'); // Optional: for debugging
-        loadEmployees();
     }, 60000); // 60000 ms = 1 minute
 }
 

@@ -10,7 +10,7 @@ toastr.options = {
 
 async function loadEmployee() {
     try {
-        const response = await fetch('http://localhost:3000/api/employees');
+        const response = await fetch('/api/employees');
         const employees = await response.json();
         
         const userSelect = document.getElementById('username');
@@ -39,7 +39,7 @@ async function getEmployeeDetails() {
     }
     
     try {
-        const response = await fetch(`http://localhost:3000/api/employees/${employeeId}`);
+        const response = await fetch(`/api/employees/${employeeId}`);
         const employee = await response.json();
         
         document.getElementById('role').value = employee.employee_role;
@@ -63,7 +63,7 @@ async function handleLogin(event) {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/login', {
+        const response = await fetch('/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

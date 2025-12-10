@@ -73,14 +73,14 @@ function showError(message) {
     errorContainer.innerHTML = `
         <div class="error-message">
             <strong>Error:</strong> ${message}<br>
-            <small>Make sure the server is running on http://localhost:3000</small>
+            <small>Make sure the server is running </small>
         </div>
     `;
 }
 
 async function loadInventory() {
     try {
-        const response = await fetch('http://localhost:3000/api/inventory/Display');
+        const response = await fetch('/api/inventory/Display');
         if (!response.ok) throw new Error('Failed to fetch Display items');
         
         const text = await response.text();
@@ -180,7 +180,7 @@ async function confirmMove() {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/inventory/move', {
+        const response = await fetch('/api/inventory/move', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
