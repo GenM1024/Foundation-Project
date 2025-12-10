@@ -180,7 +180,7 @@ async function confirmMove() {
     }
     
     try {
-        const response = await fetch('/api/inventory/move', {
+        const response = await fetch('http://localhost:3000/api/inventory/move', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

@@ -57,7 +57,7 @@ function showError(message) {
 
 async function loadLogs() {
     try {
-        const response = await fetch('/api/movement-logs');
+        const response = await fetch('http://localhost:3000/api/movement-logs');
         if (!response.ok) throw new Error('Failed to fetch movement logs');
         
         const text = await response.text();
@@ -131,7 +131,7 @@ async function updateFilters() {
     
     if (filterType === 'employee') {
         try {
-            const response = await fetch('/api/employees/all');
+            const response = await fetch('http://localhost:3000/api/employees/all');
             const text = await response.text();
             if (!text) throw new Error('Empty response');
             const employees = JSON.parse(text);
@@ -172,7 +172,7 @@ async function applyFilter() {
     try {
         if (filterType === 'employee') {
             // Filter by employee
-            const response = await fetch(`/api/movement-logs/employee/${filterValue}`);
+            const response = await fetch(`http://localhost:3000/api/movement-logs/employee/${filterValue}`);
             if (!response.ok) throw new Error('Failed to fetch logs');
             
             const text = await response.text();

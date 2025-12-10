@@ -10,7 +10,7 @@ toastr.options = {
 
 async function loadEmployee() {
     try {
-        const response = await fetch('/api/employees');
+        const response = await fetch('http://localhost:3000/api/employees');
         const employees = await response.json();
         
         const userSelect = document.getElementById('username');

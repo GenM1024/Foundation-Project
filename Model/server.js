@@ -1,4 +1,4 @@
-const Database = require("better-sqlite3-multiple-ciphers");
+const Database = require("better-sqlite3");
 const Express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -7,7 +7,7 @@ const app = Express();
 const employeeDatabase = new Database("employees.db");
 app.use(cors());
 app.use(Express.json());
-app.use(Express.static(path.join(__dirname, '../View')));
+app.use(Express.static(path.join(__dirname, '../')));
 
 //CREATE employees TABLE
 employeeDatabase.exec(
@@ -68,7 +68,7 @@ if (itemCount.count === 0) {
     insertItem.run('Printer HP LaserJet', 'Electronics', 8, 'Storage');
     insertItem.run('Damaged Monitor', 'Electronics', 2, 'Returns');
 }
-//HELPER FUNCTIONS
+//////////////////HELPER FUNCTIONS/////////////////////////////
 function checkMovePermission(role, from, to) {
     const rules = {
         'Admin': { 
@@ -87,7 +87,7 @@ function checkMovePermission(role, from, to) {
     return rules[role];
 }
 
-//Log movement function
+//LOG MOVEMENT FUNCTION
 function logMovement(itemId, itemName, employeeId, employeeName, fromLocation, toLocation, quantity) {
     try {
         const insert = employeeDatabase.prepare(
@@ -98,7 +98,7 @@ function logMovement(itemId, itemName, employeeId, employeeName, fromLocation, t
         console.error('Error logging movement:', error);
     }
 }
-
+/////////////////////////////////////////////////////////////////////////////////
 // EMPLOYEE ENDPOINTS
 // GET ALL EMPLOYEES
 app.get('/api/employees/all', (req, res) => {
@@ -344,10 +344,10 @@ app.get('/api/movement-logs/item/:id', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.redirect('/login.html');
+    res.redirect('/View/login.html');
 });
 
-const PORT = process.env.PORT ;
-app.listen(3000, () => {
-    console.log("Server listening on port 3000");
+const PORT = process.env.PORT||3000;
+app.listen(PORT, () => {
+    console.log("Server listening on port ",PORT);
 });

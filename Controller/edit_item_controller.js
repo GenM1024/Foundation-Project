@@ -102,7 +102,7 @@ async function updateItem(event) {
     const location = document.getElementById('item-location').value;
     
     try {
-        const response = await fetch(`/api/inventory/update/${itemId}`, {
+        const response = await fetch(`http://localhost:3000/api/inventory/update/${itemId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
